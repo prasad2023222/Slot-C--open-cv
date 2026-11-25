@@ -1,0 +1,17 @@
+import cv2
+
+image = cv2.imread(r"C:\Users\Dell\Downloads\image.jpg")
+
+roi = image[50:250, 50:250]
+copied_image = image.copy()
+copied_image[300:500, 300:500] = roi
+
+cv2.imshow("Original Image", image)
+cv2.imshow("Cropped Image", roi)
+cv2.imshow("Copy and Paste Image", copied_image)
+
+cv2.imwrite("cropped_image.jpg", roi)
+cv2.imwrite("copied_image.jpg", copied_image)
+
+cv2.waitKey(0)
+cv2.destroyAllWindows()

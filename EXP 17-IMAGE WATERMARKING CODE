@@ -1,0 +1,15 @@
+import cv2
+
+image = cv2.imread(r"C:\Users\Dell\Downloads\image.jpg")
+
+watermarked = image.copy()
+cv2.putText(watermarked, "WATERMARK", (50, 100),
+            cv2.FONT_HERSHEY_SIMPLEX, 2, (0, 0, 255), 3)
+
+cv2.imshow("Original Image", image)
+cv2.imshow("Watermarked Image", watermarked)
+
+cv2.imwrite("watermarked_image.jpg", watermarked)
+
+cv2.waitKey(0)
+cv2.destroyAllWindows()
